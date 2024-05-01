@@ -71,7 +71,7 @@ tinycolormap is also capable of producing quantized colormaps (i.e. the ones tha
 
 | Name     | Sample                                  |
 |:--------:|:---------------------------------------:|
-| Parula   | ![](docs/samples/Parula_10levels.png)   |
+| Parula   | ![](docs/samples/Parula_10Levels.png)   |
 
 Note that the supported range for number of levels is `[1, 255]`.
 
