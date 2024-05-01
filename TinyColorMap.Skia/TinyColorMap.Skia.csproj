@@ -1,10 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <RootNamespace>TinyColorMap</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>TinyColorMap.Skia</PackageId>
+    <Version>1.0.0-alpha1</Version>
+    <Authors>Johann Dirry</Authors>
+    <Description>Color maps for data visualization</Description>
+    <PackageTags>color, colormap, data visualization</PackageTags>
+    <PackageProjectUrl>https://github.com/MovGP0/tinycolormapdotnet</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/MovGP0/tinycolormapdotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.88.8" />

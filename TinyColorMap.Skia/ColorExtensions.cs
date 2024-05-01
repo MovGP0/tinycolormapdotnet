@@ -1,4 +1,4 @@
-namespace TinyColorMap.Skia;
+namespace TinyColorMap;
 
 public static class ColorExtensions
 {

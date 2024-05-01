@@ -3,7 +3,6 @@ using System.Reflection;
 using SkiaSharp;
 using TinyColorMap;
 using TinyColorMap.PngExporter;
-using TinyColorMap.Skia;
 
 var pathOption = new Option<string>(
     name: "--path",

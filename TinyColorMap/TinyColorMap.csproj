@@ -1,11 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>TinyColorMap</PackageId>
+    <Version>1.0.0-alpha1</Version>
+    <Authors>Johann Dirry</Authors>
+    <Description>Color maps for data visualization</Description>
+    <PackageTags>color, colormap, data visualization</PackageTags>
+    <PackageProjectUrl>https://github.com/MovGP0/tinycolormapdotnet</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/MovGP0/tinycolormapdotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-*" />
+    <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-*" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0-*" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
   </ItemGroup>
 </Project>
