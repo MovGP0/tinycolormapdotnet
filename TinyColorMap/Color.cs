@@ -113,7 +113,7 @@ public readonly struct Color
     }
 
     [Pure]
-    public static Color GetQuantizedColor(double x, uint numLevels, ColormapType type = ColormapType.Viridis)
+    public static Color GetColor(double x, uint numLevels, ColormapType type = ColormapType.Viridis)
     {
         double xx = QuantizeArgument(x, numLevels);
         return GetColor(xx, type);

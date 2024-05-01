@@ -3,8 +3,12 @@
 public static class MatrixRenderer
 {
     [Pure]
-    public static SKBitmap CreateMatrixVisualization(double[,] matrix, ColormapType type = ColormapType.Viridis)
+    public static SKBitmap CreateMatrixVisualization(
+        double[,] matrix,
+        ColormapType type = ColormapType.Viridis,
+        uint quantization = uint.MaxValue)
     {
+        bool doQuantization = quantization != uint.MaxValue;
         var width = matrix.GetLength(0);
         var height = matrix.GetLength(1);
         var (minCoeff, maxCoeff) = FindMinMax(matrix);
@@ -16,8 +20,10 @@ public static class MatrixRenderer
         for (var y = 0; y < height; ++y)
         {
             var normalizedValue = (matrix[x, y] - minCoeff) / range;
-            var color = Color.GetColor(normalizedValue, type).ToSkiaColor();
-            bitmap.SetPixel(x, y, color);
+            var color = doQuantization
+                ? Color.GetColor(normalizedValue, quantization, type)
+                : Color.GetColor(normalizedValue, type);
+            bitmap.SetPixel(x, y, color.ToSkiaColor());
         }
 
         return bitmap;

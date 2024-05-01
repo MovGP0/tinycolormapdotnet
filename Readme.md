@@ -56,3 +56,26 @@ Turbo is developed as an alternative to the Jet colormap by Anton Mikhailov (Goo
 | Cubehelix | ![](docs/samples/Cubehelix.png) |
 
 Cubehelix is developed by Dr. Dave Green and is designed for astronomical intensity images. It shows a continuous increase in perceived intensity when shown in color or greyscale. This implementation uses Green's "default" scheme (start: 0.5, rotations: -1.5, hue: 1.0, gamma: 1.0). See [the original publication](https://ui.adsabs.harvard.edu/abs/2011BASI...39..289G/abstract) for details.
+
+## Usage
+
+The core function of this library is
+```csharp
+var color = Color.GetColor(double x, ColormapType type);
+```
+where `x` should be between `0.0` and `1.0` (otherwise, it will be cropped), and `type` is the target colormap type like `Viridis` (default) and `Heat`.
+
+### Quantized colors
+
+tinycolormap is also capable of producing quantized colormaps (i.e. the ones that have visible boundaries between colors) based on the user specified number of levels. Below is the example of the quantized Parula colormap using 10 quantization levels:
+
+| Name     | Sample                                  |
+|:--------:|:---------------------------------------:|
+| Parula   | ![](docs/samples/Parula_10levels.png)   |
+
+Note that the supported range for number of levels is `[1, 255]`.
+
+To create a colormap quantization use:
+```csharp
+var color = Color.GetColor(double x, uint quantization, ColormapType type);
+```
