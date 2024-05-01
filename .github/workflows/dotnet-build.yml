@@ -1,0 +1,43 @@
+name: .NET Build
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.csproj' # Trigger only when .csproj files are changed
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetches all history for all branches and tags, necessary for SonarCloud or similar analysis if used.
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0' # Specify the .NET version
+
+    - name: Restore dependencies
+      run: dotnet restore TinyColorMap.sln
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore TinyColorMap.sln
+
+    - name: Run Tests
+      run: dotnet test --no-restore --verbosity normal TinyColorMap.sln
+
+## Pack and publish steps (only) for push to main branch      
+#    - name: Pack
+#      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+#      run: dotnet pack --configuration Release --no-build --output nupkgs
+#      env:
+#        VERSION_SUFFIX: ${{ github.run_number }}
+#
+#    - name: Publish NuGet Package
+#      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+#      run: dotnet nuget push "nupkgs/**/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
