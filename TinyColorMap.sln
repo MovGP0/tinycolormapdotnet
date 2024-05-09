@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.Skia", "TinyCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.PngExporter", "TinyColorMap.PngExporter\TinyColorMap.PngExporter.csproj", "{C032DF51-3518-44A8-BF81-2F3D571ED61A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.HSLUV", "TinyColorMap.HSLUV\TinyColorMap.HSLUV.csproj", "{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{C032DF51-3518-44A8-BF81-2F3D571ED61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C032DF51-3518-44A8-BF81-2F3D571ED61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C032DF51-3518-44A8-BF81-2F3D571ED61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
