@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.Skia", "TinyCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.PngExporter", "TinyColorMap.PngExporter\TinyColorMap.PngExporter.csproj", "{C032DF51-3518-44A8-BF81-2F3D571ED61A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.HSLUV", "TinyColorMap.HSLUV\TinyColorMap.HSLUV.csproj", "{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.ColorSpaces", "TinyColorMap.ColorSpaces\TinyColorMap.ColorSpaces.csproj", "{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
