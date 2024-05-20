@@ -19,4 +19,7 @@
       <DependentUpon>ColorSpaceConverter.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="TinyColorMap.ColorSpaces.csproj.DotSettings" />
+  </ItemGroup>
 </Project>
