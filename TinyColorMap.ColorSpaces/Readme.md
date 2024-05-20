@@ -1,6 +1,6 @@
-# Color Space
+## ColorSpaceConverter
 
-Provides methods to convert colors between different color spaces. The following color spaces are supported:
+The `ColorSpaceConverter` class provides methods to convert colors between different color spaces. The following color spaces are supported:
 
 | Color Space | Usage                                                                                                                                                                                                                    |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -16,6 +16,37 @@ Provides methods to convert colors between different color spaces. The following
 | YUV         | YUV is used in video compression and transmission, separating the luminance (Y) from the chrominance (U and V) to reduce bandwidth while preserving color information.                                                   |
 | YCbCr       | YCbCr is used in digital video and image compression formats like JPEG and MPEG, where separating luminance and chrominance allows for more efficient encoding.                                                          |
 | HSV         | HSV (Hue, Saturation, Value) is used in many applications where color description is key, such as image editing and graphic design, providing a more intuitive way to adjust colors.                                     |
+
+## GradientGenerator
+
+The `GradientGenerator` class provides methods to generate color gradients between two colors.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        // Define the parameters for the gradient
+        GradientGeneralType generalType = GradientGeneralType.Continuous;
+        GradientJoiningType joiningType = GradientJoiningType.No;
+        double hue = 200.0; // Base hue [0..360°]
+        double saturation = 80.0; // Saturation level [0..100%]
+        int numberOfColors = 10; // Number of colors in the gradient
+
+        // Create the gradient
+        IEnumerable<(double position, RGB color)> gradient = GradientGenerator.CreateGradient(generalType, joiningType, hue, saturation, numberOfColors);
+
+        // Print the gradient positions and colors
+        foreach (var (position, color) in gradient)
+        {
+            Console.WriteLine($"Position: {position:F2}, Color: R={color.R}, G={color.G}, B={color.B}");
+        }
+    }
+}
+```
 
 ## Attribution
 
