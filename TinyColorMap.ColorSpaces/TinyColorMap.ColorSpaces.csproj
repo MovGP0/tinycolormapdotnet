@@ -11,4 +11,12 @@
     <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-*" PrivateAssets="all" ExcludeAssets="runtime" />
     <PackageReference Include="System.Collections.Immutable" Version="8.0.0-*" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ColorSpaceConverter.Constants.cs">
+      <DependentUpon>ColorSpaceConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ColorSpaceConverter.HelperMethods.cs">
+      <DependentUpon>ColorSpaceConverter.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
