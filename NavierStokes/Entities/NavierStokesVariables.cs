@@ -1,4 +1,4 @@
-﻿namespace NavierStokes;
+﻿namespace NavierStokes.Entities;
 
 /// <summary>
 /// This class holds all the necessary variables for the 2D Navier-Stokes incompressible flow simulation.

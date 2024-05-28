@@ -1,4 +1,4 @@
-﻿namespace NavierStokes;
+﻿namespace NavierStokes.Entities;
 
 /// <summary>
 /// The <c>PoissonPressureSolverParameters</c> class holds the parameters

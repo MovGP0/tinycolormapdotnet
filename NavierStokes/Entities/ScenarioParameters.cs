@@ -1,6 +1,4 @@
-﻿using static NavierStokes.SIUnits;
-
-namespace NavierStokes;
+﻿namespace NavierStokes.Entities;
 
 /// <summary>
 /// This class holds the parameters for a fluid dynamics simulation scenario.

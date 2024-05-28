@@ -1,4 +1,4 @@
-﻿namespace NavierStokes;
+﻿namespace NavierStokes.Entities;
 
 /// <summary>
 /// Holds the parameters related to saving data during the fluid dynamics simulation.
