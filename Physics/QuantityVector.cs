@@ -36,13 +36,17 @@ public partial class QuantityVector
     public static QuantityVector operator +(QuantityVector q1, QuantityVector q2)
     {
         Check.UnitsAreSameDimension(q1.Unit, q2.Unit);
-        return new QuantityVector(q1._coherent.Amount + q2._coherent.Amount, q1._coherent.Unit);
+        return new QuantityVector(
+            q1._coherent.Amount + q2._coherent.Amount,
+            q1._coherent.Unit);
     }
 
     public static QuantityVector operator -(QuantityVector q1, QuantityVector q2)
     {
         Check.UnitsAreSameDimension(q1.Unit, q2.Unit);
-        return new QuantityVector(q1._coherent.Amount - q2._coherent.Amount, q1._coherent.Unit);
+        return new QuantityVector(
+            q1._coherent.Amount - q2._coherent.Amount,
+            q1._coherent.Unit);
     }
 
     public static QuantityVector operator *(QuantityVector q, double factor)
@@ -51,11 +55,26 @@ public partial class QuantityVector
     public static QuantityVector operator *(double factor, QuantityVector q)
         => new(q._coherent.Amount * factor, q._coherent.Unit);
 
+    public static QuantityVector operator *(Quantity factor, QuantityVector q)
+    {
+        var coherentFactor = factor.ToCoherent();
+        return new QuantityVector(
+            q._coherent.Amount * coherentFactor.Amount, 
+            q._coherent.Unit * coherentFactor.Unit);
+    }
+
     public static QuantityVector operator /(QuantityVector q, double factor)
         => new(q._coherent.Amount / factor, q._coherent.Unit);
 
-    public static QuantityVector operator /(double factor, QuantityVector q)
-        => new(q._coherent.Amount / factor, q._coherent.Unit);
+    public static QuantityVector operator /(QuantityVector q, Quantity factor)
+    {
+        var coherentFactor = factor.ToCoherent();
+        return new QuantityVector(
+            q._coherent.Amount / coherentFactor.Amount, 
+            q._coherent.Unit / coherentFactor.Unit);
+    }
+
+    public static QuantityVector operator -(QuantityVector q) => q * -1;
 
     internal QuantityVector ToCoherent()
     {
@@ -70,4 +89,6 @@ public partial class QuantityVector
 
         return new QuantityVector(unit.Factor * Amount, coherentUnit);
     }
+
+    public QuantityVector Clone() => new(Amount.Clone(), Unit, _coherent);
 }

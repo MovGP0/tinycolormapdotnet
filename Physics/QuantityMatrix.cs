@@ -69,4 +69,6 @@ public partial class QuantityMatrix
     }
 
     private int GenerateHashCode() => HashCode.Combine(Unit, Amount);
+
+    public QuantityMatrix Clone() => new(Amount.Clone(), Unit, _coherent);
 }
