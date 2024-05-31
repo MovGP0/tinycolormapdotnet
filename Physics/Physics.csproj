@@ -20,6 +20,9 @@
     <Compile Update="Quantity.*.cs">
       <DependentUpon>Quantity.cs</DependentUpon>
     </Compile>
+    <Compile Update="QuantityMatrix.*.cs">
+      <DependentUpon>QuantityMatrix.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Messages.resx">
