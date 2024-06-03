@@ -4,6 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsTestProject>true</IsTestProject>
+    <NoWarn>CA1816</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
@@ -27,8 +28,29 @@
     </PackageReference>
     <PackageReference Include="SkiaSharp" Version="2.88.8" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
+    <PackageReference Include="TorchSharp" Version="0.102.4" />
+    <PackageReference Include="TorchSharp-cpu" Version="0.102.4" />
+    <PackageReference Include="FFMpegCore" Version="5.1.0" />
+    <PackageReference Include="Shouldly" Version="4.2.1" />
+    <PackageReference Include="OxyPlot.SkiaSharp" Version="2.1.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Physics\Physics.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Messages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
