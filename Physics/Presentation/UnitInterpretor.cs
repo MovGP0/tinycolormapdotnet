@@ -71,11 +71,13 @@ internal class UnitInterpretor
         return builder.ToString();
     }
 
-    private string BuildFactor(string symbol, int exponent)
+    private const float TOLERANCE = 1e-6f;
+
+    private string BuildFactor(string symbol, float exponent)
     {
         var absolute = Math.Abs(exponent);
 
-        if (absolute == 1)
+        if (Math.Abs(absolute - 1f) < TOLERANCE)
         {
             return symbol;
         }

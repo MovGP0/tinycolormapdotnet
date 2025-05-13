@@ -6,7 +6,7 @@ public static class SI
     {
         System = UnitSystemFactory.CreateSystem("SI");
 
-        //Base units
+        // Base units
         m = System.AddBaseUnit("m", "metre");
         kg = System.AddBaseUnit("kg", "kilogram", true);
         s = System.AddBaseUnit("s", "second");
@@ -15,7 +15,7 @@ public static class SI
         mol = System.AddBaseUnit("mol", "mole");
         cd = System.AddBaseUnit("cd", "candela");
 
-        //Derived units
+        // Derived units
         Hz = System.AddDerivedUnit("Hz", "hertz", s ^ -1);
         N = System.AddDerivedUnit("N", "newton", kg*m*(s ^ -2));
         Pa = System.AddDerivedUnit("Pa", "pascal", N*(m ^ -2));
@@ -33,19 +33,19 @@ public static class SI
         Sv = System.AddDerivedUnit("Sv", "sievert", J/kg);
         kat = System.AddDerivedUnit("kat", "katal", (s ^ -1)*mol);
 
-        //Incoherent units
+        // Incoherent units
         h = System.AddDerivedUnit("h", "hour", 60*60*s);
     }
 
     /// <summary>
-    ///     International System of Units
+    /// International System of Units
     /// </summary>
     public static IUnitSystem System { get; }
 
     #region Incoherent units
 
     /// <summary>
-    ///     Time expressed in hours
+    /// Time expressed in hours
     /// </summary>
     public static Unit h { get; private set; }
 
@@ -54,37 +54,37 @@ public static class SI
     #region Base units
 
     /// <summary>
-    ///     length
+    /// length
     /// </summary>
     public static Unit m { get; }
 
     /// <summary>
-    ///     mass
+    /// mass
     /// </summary>
     public static Unit kg { get; }
 
     /// <summary>
-    ///     time
+    /// time
     /// </summary>
     public static Unit s { get; }
 
     /// <summary>
-    ///     electric current
+    /// electric current
     /// </summary>
     public static Unit A { get; }
 
     /// <summary>
-    ///     thermodynamic temperature
+    /// thermodynamic temperature
     /// </summary>
     public static Unit K { get; private set; }
 
     /// <summary>
-    ///     amount of substance
+    /// amount of substance
     /// </summary>
     public static Unit mol { get; }
 
     /// <summary>
-    ///     luminous intensity
+    /// luminous intensity
     /// </summary>
     public static Unit cd { get; }
 
@@ -93,82 +93,82 @@ public static class SI
     #region Derived units
 
     /// <summary>
-    ///     frequency
+    /// frequency
     /// </summary>
     public static Unit Hz { get; private set; }
 
     /// <summary>
-    ///     force, weight
+    /// force, weight
     /// </summary>
     public static Unit N { get; }
 
     /// <summary>
-    ///     pressure, stress
+    /// pressure, stress
     /// </summary>
     public static Unit Pa { get; private set; }
 
     /// <summary>
-    ///     energy, work, heat
+    /// energy, work, heat
     /// </summary>
     public static Unit J { get; }
 
     /// <summary>
-    ///     power, radiant flux
+    /// power, radiant flux
     /// </summary>
     public static Unit W { get; }
 
     /// <summary>
-    ///     electric charge, quantity of electricity
+    /// electric charge, quantity of electricity
     /// </summary>
     public static Unit C { get; }
 
     /// <summary>
-    ///     voltage (electrical potential difference), electromotive force
+    /// voltage (electrical potential difference), electromotive force
     /// </summary>
     public static Unit V { get; }
 
     /// <summary>
-    ///     electric capacitance
+    /// electric capacitance
     /// </summary>
     public static Unit F { get; private set; }
 
     /// <summary>
-    ///     electric resistance, impedance, reactance
+    /// electric resistance, impedance, reactance
     /// </summary>
     public static Unit Ω { get; private set; }
 
     /// <summary>
-    ///     electrical conductance
+    /// electrical conductance
     /// </summary>
     public static Unit S { get; private set; }
 
     /// <summary>
-    ///     magnetic flux
+    /// magnetic flux
     /// </summary>
     public static Unit Wb { get; }
 
     /// <summary>
-    ///     magnetic field strength
+    /// magnetic field strength
     /// </summary>
     public static Unit T { get; private set; }
 
     /// <summary>
-    ///     inductance
+    /// inductance
     /// </summary>
     public static Unit H { get; private set; }
 
     /// <summary>
-    ///     illuminance
+    /// illuminance
     /// </summary>
     public static Unit lx { get; private set; }
 
     /// <summary>
-    ///     equivalent dose of ionizing radiation
+    /// equivalent dose of ionizing radiation
     /// </summary>
     public static Unit Sv { get; private set; }
 
     /// <summary>
-    ///     catalytic activity
+    /// catalytic activity
     /// </summary>
     public static Unit kat { get; private set; }
 

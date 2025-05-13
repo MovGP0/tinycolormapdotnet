@@ -1,8 +1,8 @@
 ﻿namespace Physics;
 
-public sealed class Dimension : ImmutableCollection<int>
+public sealed class Dimension : ImmutableCollection<float>
 {
-    internal Dimension(params int[] exponents)
+    internal Dimension(params float[] exponents)
         : base(Trim(exponents))
     {
         Check.Argument(exponents, nameof(exponents)).IsNotNull();
@@ -26,14 +26,14 @@ public sealed class Dimension : ImmutableCollection<int>
         return new Dimension(dimension1.Merge(dimension2, (x, y) => x - y).ToArray());
     }
 
-    public static Dimension operator ^(Dimension dimension, int exponent)
+    public static Dimension operator ^(Dimension dimension, float exponent)
     {
         Check.Argument(dimension, nameof(dimension)).IsNotNull();
 
         return new Dimension(dimension.Select(e => e*exponent).ToArray());
     }
 
-    private static int[] Trim(int[] exponents)
+    private static float[] Trim(float[] exponents)
     {
         if (exponents.Length == 0) return exponents;
 

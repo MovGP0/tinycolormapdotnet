@@ -8,7 +8,7 @@ public partial class QuantityVector : IComparable<QuantityVector>
             return -1;
         return this > other ? 1 : 0;
     }
-    
+
     public static bool operator >(QuantityVector? quantity1, QuantityVector? quantity2)
     {
         if (ReferenceEquals(quantity1, quantity2) || quantity1 == null)

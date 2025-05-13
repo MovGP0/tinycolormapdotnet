@@ -12,19 +12,17 @@ public class ImmutableCollection<TItem> : ReadOnlyCollection<TItem>, IEquatable<
         _hashCode = Items.Hash();
     }
 
-    public bool Equals(ImmutableCollection<TItem> other)
+    public bool Equals(ImmutableCollection<TItem>? other)
     {
-        if (other == null) return false;
-        return (this.SequenceEqual(other));
+        if (other == null)
+        {
+            return false;
+        }
+
+        return this.SequenceEqual(other);
     }
 
-    public override bool Equals(object obj)
-    {
-        return Equals(obj as ImmutableCollection<TItem>);
-    }
+    public override bool Equals(object? obj) => obj is ImmutableCollection<TItem> collection && Equals(collection);
 
-    public override int GetHashCode()
-    {
-        return _hashCode;
-    }
+    public override int GetHashCode() => _hashCode;
 }

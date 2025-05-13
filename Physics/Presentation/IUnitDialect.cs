@@ -1,10 +1,10 @@
 ﻿namespace Physics.Presentation;
 
 /// <summary>
-///     Represents a convention for unit representation
+/// Represents a convention for unit representation
 /// </summary>
 /// <remarks>
-///     The first representation of a token will take precedence for unit display
+/// The first representation of a token will take precedence for unit display
 /// </remarks>
 public interface IUnitDialect
 {

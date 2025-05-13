@@ -76,7 +76,7 @@ public partial class QuantityVector
 
     public static QuantityVector operator -(QuantityVector q) => q * -1;
 
-    internal QuantityVector ToCoherent()
+    public QuantityVector ToCoherent()
     {
         var unit = Unit;
 

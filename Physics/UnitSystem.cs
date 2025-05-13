@@ -154,7 +154,7 @@ internal class UnitSystem : IUnitSystem
 
     private static Dimension CreateNewBaseDimension(int index)
     {
-        var exponents = new int[index + 1];
+        var exponents = new float[index + 1];
         exponents[index] = 1;
 
         return new(exponents);

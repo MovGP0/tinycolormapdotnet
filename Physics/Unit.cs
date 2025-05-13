@@ -87,7 +87,7 @@ public abstract class Unit : IEquatable<Unit>
     }
 
     [Pure]
-    public static Unit operator ^(Unit unit, int exponent)
+    public static Unit operator ^(Unit unit, float exponent)
     {
         Check.Argument(unit, nameof(unit)).IsNotNull();
 

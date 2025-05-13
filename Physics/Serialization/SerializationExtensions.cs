@@ -12,12 +12,12 @@ public static class SerializationExtensions
         {
             var baseUnit = system[symbols[i]];
 
-            if (ReferenceEquals(baseUnit, null) || !baseUnit.IsCoherent)
+            if (baseUnit is not { IsCoherent: true })
             {
                 throw new InvalidOperationException(Messages.UnitsNotSameSystem);
             }
 
-            unit *= (baseUnit ^ exponents[i]);
+            unit *= baseUnit ^ exponents[i];
         }
 
         return new Quantity(info.Amount, unit);
