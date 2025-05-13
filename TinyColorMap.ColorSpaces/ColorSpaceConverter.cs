@@ -223,11 +223,27 @@ public static partial class ColorSpaceConverter
     }
 
     [Pure]
+    public static HWB Hsv2Hwb(HSV hsv)
+    {
+        var (h, s, v) = hsv;
+        double w = 1 - s * v;
+        double b = 1 - v;
+        return new(h, w, b);
+    }
+
+    [Pure]
+    public static HSV Hwb2Hsv(HWB hwb)
+    {
+        var (h, w, b) = hwb;
+        double v = 1 - b;
+        double s = v == 0 ? 0 : (1 - w) / v;
+        return new(h, s, v);
+    }
+
+    [Pure]
     public static RGB Hwb2Rgb(HWB hwb)
     {
-        double h = hwb.H;
-        double w = hwb.W;
-        double b = hwb.B;
+        var (h, w, b) = hwb;
         double ratio = w + b;
 
         if (ratio > 1)

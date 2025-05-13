@@ -32,7 +32,7 @@ public readonly struct Color
     /// The color red.
     /// </summary>
     public static readonly Color Red = new(1.0, 0.0, 0.0);
-    
+
     /// <summary>
     /// The color green.
     /// </summary>

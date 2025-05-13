@@ -13,7 +13,4 @@
     <ProjectReference Include="..\TinyColorMap.Skia\TinyColorMap.Skia.csproj" />
     <ProjectReference Include="..\TinyColorMap\TinyColorMap.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GlobalUsings\" />
-  </ItemGroup>
 </Project>

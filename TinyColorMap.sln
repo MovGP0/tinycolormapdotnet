@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.PngExporter", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.ColorSpaces", "TinyColorMap.ColorSpaces\TinyColorMap.ColorSpaces.csproj", "{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.ColorSpaces.Tests", "TinyColorMap.ColorSpaces.Tests\TinyColorMap.ColorSpaces.Tests.csproj", "{A9BAD67A-2BA5-4988-BEB3-BF7CD3E3BC1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyColorMap.Tests", "TinyColorMap.Tests\TinyColorMap.Tests.csproj", "{51E26C58-471A-4B84-8EEC-CC33D5D553D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DCDF5A-E9B2-4F0E-8854-F286C85E7797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BAD67A-2BA5-4988-BEB3-BF7CD3E3BC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BAD67A-2BA5-4988-BEB3-BF7CD3E3BC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BAD67A-2BA5-4988-BEB3-BF7CD3E3BC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BAD67A-2BA5-4988-BEB3-BF7CD3E3BC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E26C58-471A-4B84-8EEC-CC33D5D553D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E26C58-471A-4B84-8EEC-CC33D5D553D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E26C58-471A-4B84-8EEC-CC33D5D553D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E26C58-471A-4B84-8EEC-CC33D5D553D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
